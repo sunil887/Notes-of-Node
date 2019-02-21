@@ -1,0 +1,16 @@
+chapter -5 :    To load a module in another module
+
+		Require function takes single arguement path to the file name.
+		
+		./subfolder/subfolder/file  ---- down the page
+		
+		../filename		as many as '.' as we move back in file system.
+		
+		always use constant to require object.
+		use jshint to detect error like chagning constant vaiable value
+
+
+chapter - 8 :  https://nodejs.org/dist/latest-v10.x/docs/api/os.html
+		link to use already made module.
+		use require('name only')
+		like require('os')

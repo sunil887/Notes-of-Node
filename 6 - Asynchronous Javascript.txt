@@ -1,0 +1,30 @@
+chapter -1 : Aysnchronous does not mean multithreading . It means non blocking.
+
+chapter -2 : when the data calls are made it takes time so it kind a block.
+				
+				var user = data_call();
+				we have to wailt till the call ends or if it's done asynchronously then 
+				data will not be in user variable when we call it.
+
+				To deal with Asynchronous code like data_call or any other asynchronous code.
+				1) callbacks
+				2)promises
+				3)asyc/await
+
+chapter -3 : callbacks
+				callbacks are just function which are passes to the asynchronous function 
+				are called when asynchronous function ready with thier result.
+				
+				example:
+					CALLING : getRepository('mosh',(repos)=>{
+									console.log('respsitory are ',repos);
+								})
+		FUNCTION Definition : function getRepository(username,callback){
+								setTimeout(() => {
+									callback(['repo1','repo1','repo1']);    
+								}, 2000);
+
+chapter -4 callback hell
+				callbacks can happens one after another 
+				and result highly nested structure , called - CALLBACK HELL OR CHRISTMAS TREE PROBLEM.
+				

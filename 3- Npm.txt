@@ -1,0 +1,63 @@
+
+chapter-1 
+	: NPM is command line tools and registery to third party libraries 
+	  that we can add to our node applicaion.
+
+	use npm i -g npm@version_no. to install particaular version
+	use npm init to make package.json file
+	npm init --yes make the processs faster
+
+chapter -2 
+	: NPM uses require to use npm packages. 
+	
+chapter - 6 
+	: package.json file can be used to install dependencies
+	: to not track nodemodules folder
+			add .gitignore files
+chapter - 7 
+	: Semantic versioning major.minor.patch
+	Patches - bug fix in 
+	Minor - adding feature that do not break existing API
+	Major  - that might break existing API
+	
+	: ^(caret) is used 4.x any version of packages as major is 4
+	: ~(tilde) is like 4.5.x
+chapter - 8 
+	: how to know exact package version as ^ only ensure for major changes remain same 
+		- look in package.json of node module you want to apply for
+		OR better use npm list cmd. it will list all dependencies and their dependencies
+chapter- 9 
+	: use npm view <property name> to view metadata of corresponding  property about node module
+		npm view shows entire package.json file		
+chapter - 10
+	: use npm i modulename@version --- install particular version of node module
+
+chapter - 11 
+	: To update package that has been outdated
+	first use npm outdated 
+	show three columns
+	current - version in use right in module
+	wanted -  most latest package can update to without breaking the api.
+	latest - latest package module present in registery.  
+	
+	npm i to install all dependencies package.json file	
+	npm i -g npm-check-updates
+
+chapter -12 
+	: There are some dependencies that are dev dependiencies that only developer needs 
+		and should not be sent to production. enviroment when we deploy.
+	  for that use npm <devdependenciesname> --save-dev it will be listed in devDependencies in Package.json file
+chapter -15 
+	:publishing a package 
+	1> create node module with init
+	2> make index.js file write your code
+	3> log in with your user name 
+	4> use npm publish
+	5> now use it another module
+	6> use unpublish <nodePackagename> -f to remove entire package.
+	 
+
+ 
+	
+		 
+			

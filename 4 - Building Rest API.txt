@@ -1,0 +1,49 @@
+chapter -1 
+		use Express(framework)lightweight to build web application.
+
+chapter - 2 https when data needed to transfer over secure channel
+	    http when not
+		Rest convention
+		Get  to get data single or list 
+		Put  to update data
+		Post create data
+		Delete delete data
+
+chapter -4 Building restful api 
+ 	use require('express')
+	the use const app = express();
+	
+chapter -5 use nodemon to run server app
+		nodemon index 
+		so that avoid manually stoping and and starting  of the server whenever some changes are made to the code.
+chapter -6 manage environment variables like port
+	hard coded port numbers are not good 
+	use const port = process.env.PORT || 3000(some Random number)	
+	environment variable are variable of enviroment in whih process running.
+	like hosting environment has PORT as variable.
+
+chapter-7 
+	to get single data use route like app.get('api.courses/:year/:month',(req,res)=>{req.params.id})
+	route parameters are essential to get the data.
+	query string parameters that added after question mark in url 
+		/api/customer/:year/:month?sortBy=month 
+	these are optional
+
+chapter - 9 : handle http post request
+		we have to enable parsing of json object in the body of request 
+		by default this is not enables in express.
+		invalid initializer means   		 		
+
+chapter -11  use joi package to validate body of req input from use 
+		1> use require it's a class	
+		2>const schema = {
+        Name:Joi.string().min(3).required()
+    }
+    const result = Joi.validate(req.body,schema);
+    
+    if(result.error){
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
+chapter -12 
+	

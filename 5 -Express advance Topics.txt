@@ -1,0 +1,68 @@
+chapter -1 : we will learn middleware 
+				configuration
+				debugging
+				Templtating Engines
+chapter - 2 middleware funtion
+
+		these are the function that takes in request object and either 
+		return response  to the client or passes control to the another middleware function
+
+		every route handler is middleware function
+		
+		express.json return middleware that parse body of request if body contains json object and set req.body property.
+
+		request processing pipeline
+		pipleline contains one or more middleware function
+		
+		request							reposnse
+		---------->express.json()------------>route handler--------------> terminating  request-response cycle
+
+		express appllication is bunch of middleware function
+   
+
+chapter - 3   always make sure to end req-res cycle
+		
+		each custom middleware function must be keep in separate module/file.
+
+chapter - 4 	there are some middleware available which you can use
+
+chapter - 5    use third party middleware in order like helmet etc from https://expressjs.com/en/resources/middleware.html
+
+chapter - 6 	we have to know that which enviroment working developng environment or producuction environment
+		use $env:NODE_ENV="production" in windows powershell to enable environment variable
+		
+		Environment 
+				production
+				staging
+				development
+chapter - 7 configuration needed  to be done based on various environment present
+
+chapter - 8  console.log can be used to debug application but not a goodway of doing it;
+	
+		use debug package module 
+		const debug  = require('debug')('app:startup'); 
+		
+		"app:startup" is a userdefined debugging namespace which will be used to set 
+		debug environment variable. use powershell to set debug variable using $env:DEBUG:"namespace_name"
+		
+		setting multiple debug mode DEBUG:"namespace_name1","namespace_name2" 
+
+		example 
+			const debug1  = require('debug')('app:startup');
+			if(app.get('env') === 'development'){
+		        	app.use(morgan('tiny'));
+ 		 	  	debug1('morgan enabled..');
+			}
+			debug2('debug2 is here');
+		
+			RESULT
+		 		app:startup morgan enabled.. +0ms
+  				app:debug debug2 is here +0ms
+
+		set DEBUG:* to set denug to all namespace available
+
+			
+
+chapter -22  Templating Engine : Sometimes we need to sent HTML markup to the client from api for that we 
+		can use "view Engine" like pug ,moustache etc.
+		    	    	
