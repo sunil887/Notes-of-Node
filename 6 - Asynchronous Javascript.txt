@@ -27,4 +27,34 @@ chapter -3 : callbacks
 chapter -4 callback hell
 				callbacks can happens one after another 
 				and result highly nested structure , called - CALLBACK HELL OR CHRISTMAS TREE PROBLEM.
-				
+
+chapter-5 named_function   we can avoid the use of anonymous function in call backs which results into
+				 call back instead use named functon and provide function definition   
+				down the call.
+
+chapter - 6 Promises		Promises : hold the eventual result of an asynchronous operation
+						promises that it will give an object. this object can be in three states
+						1> when we create promise object it is in pending states -- call asynchronous operation
+						when the resaults are ready promises can be 
+						2>fulfilled or resolved state 
+						if something went wrong then promises in 
+						3> Rejected state  
+						
+						Code Example
+						---------------------------------------------------------------------------
+						var p = new Promise((resolve,reject)=>{
+    
+								setTimeout(()=>{            //Async call can be to database or to any another async operation
+									resolve(1);             // reolve is used to returned  the result from async call
+									reject(new Error('message')); // reject is used return error 
+								},2000);
+
+							});
+
+							p
+								.then((result)=>{console.log(result)})      // then handle the situation 
+																			//when promise oject is in fullfilled state o resolve state
+								
+							  .catch( (err)=>console.log('err:',err.message) )  // catch is to handle when 
+																				//promise object is in rejected state i,e 
+						------------------------------------------------------------------------------
