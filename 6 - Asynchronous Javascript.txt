@@ -57,4 +57,15 @@ chapter - 6 Promises		Promises : hold the eventual result of an asynchronous ope
 								
 							  .catch( (err)=>console.log('err:',err.message) )  // catch is to handle when 
 																				//promise object is in rejected state i,e 
-						------------------------------------------------------------------------------
+							------------------------------------------------------------------------------
+chapter - 8 : to consume promise we can make promise then chain.
+
+		like 
+		getuser(1)
+                    .then( result =>{console.log('hello');
+			getRepository(result.username)})
+                    .then( repos =>console.log('repos are :',repos))
+                    .catch(err=> console.log(err));
+     
+chapter - 9 : promises that has been already resolved or rejected are used for unit testing.
+ 						
