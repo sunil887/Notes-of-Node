@@ -68,4 +68,7 @@ chapter - 8 : to consume promise we can make promise then chain.
                     .catch(err=> console.log(err));
      
 chapter - 9 : promises that has been already resolved or rejected are used for unit testing.
- 						
+
+chapter - 10 : promises.All(Afunc1,Afunc2......) can run more than one asynchronous together in parrallel.
+		promises.race(Afunc1,Afunc2......)  resolve when any of the asynchronous function  resolves
+		

@@ -28,6 +28,7 @@ chapter-7
 	query string parameters that added after question mark in url 
 		/api/customer/:year/:month?sortBy=month 
 	these are optional
+	Make sure you sent 404 errror when data is present
 
 chapter - 9 : handle http post request
 		we have to enable parsing of json object in the body of request 
