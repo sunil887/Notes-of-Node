@@ -1,0 +1,9 @@
+chapter - 1 : mongo Db is NoSql db where there is no schema is used and simply
+		 object in JSON format are saved.
+
+chapter -2 :	Install mongoDB without as a service then run the software
+		Add mongod binary exe location  to path variable
+		
+		then give command mongod to start server and then run compass and connect it. 
+
+chapter -3 :	 

@@ -71,4 +71,6 @@ chapter - 9 : promises that has been already resolved or rejected are used for u
 
 chapter - 10 : promises.All(Afunc1,Afunc2......) can run more than one asynchronous together in parrallel.
 		promises.race(Afunc1,Afunc2......)  resolve when any of the asynchronous function  resolves
+
+chapter- 11 : async await is also one of the method that is used for asynchronous fucntion.
 		
