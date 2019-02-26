@@ -6,4 +6,81 @@ chapter -2 :	Install mongoDB without as a service then run the software
 		
 		then give command mongod to start server and then run compass and connect it. 
 
-chapter -3 :	 
+chapter -3 :	In chapter-7 of section 5 there is configuration file that has the reposibility  to provide connection string to mongoDB 
+		which is based on environmnet we are working on.
+
+		in order to connect to mongodb
+
+		use const mongoose = require('mongoose');
+		mongoose.connect('mongodb://localhost/playground') // when we write first data  to this database mongoDB automatically create this db.
+		.then(result => console.log('connected..'))		 						    // connect return promise
+		.catch(err => coonsole.log('not connected'))
+		  
+	
+		make sure you start your local server before you run it.
+
+chapter -4:  like in Relational Database       mongodb
+			table ---------------> collection
+			rows  ---------------> documents
+
+		we can create schema in mongoose which is specific to mongoose that how documents should look like
+		and the type that we  can define in schema are 
+		 String,Number,Date,Buffer,Boolean,ObjectID,Arrayconst
+			
+		const MongooseSchema = {
+    					    name : String,
+					    author: String,
+					    tags:[String],
+					    date: {type:Date,default:Date.now},
+					    isPublished:Boolean
+					}					
+
+		 courseSchema = mongoose.Schema(MongooseSchema);
+
+chapter -5 : 
+		//returns a class
+		const Course  = mongoose.model('Course',courseSchema); // singular name of collection,Document schema both in DB // compiling it to mode which gives a classl
+		
+		//make an object
+		const course = new Course({
+    		name:'Angular',
+    		author:'mosh',
+    		tags:['angular','frontend'],
+    		isPublished: true
+    
+		})
+    		course.save()s
+                	.then(result=>console.log(result));
+
+chapter-8 : querying function in mongo DB 
+			use querying function on the class(model) created
+			
+			Example : 
+			async function getCourses(){
+			courses = await Course
+								.find({isPublished:true})
+								.limit(4)
+								.sort({name:1}) //-1 for descending 
+								.select({name:1,tags:1});
+			console.log(courses);
+			}
+			getCourses();
+			
+chapter-9 : comparison operators use in mongo db 
+			
+			each property of model is compared from an object 
+			syntax .find(property_name: {$comparison_operator: value })
+			
+			Comparision operators are as follows 
+			//eq - equals to 
+			//ne - not equals to 
+			//gt - greater than
+			//gte - greater than or equals to
+			//lt  - less than 
+			//lte - less than or equals to
+			//in  - 
+			// nin - not in
+			
+				example: price :{$in: [10,15,20]};
+				
+		

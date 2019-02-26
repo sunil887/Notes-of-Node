@@ -73,4 +73,11 @@ chapter - 10 : promises.All(Afunc1,Afunc2......) can run more than one asynchron
 		promises.race(Afunc1,Afunc2......)  resolve when any of the asynchronous function  resolves
 
 chapter- 11 : async await is also one of the method that is used for asynchronous fucntion.
-		
+				async function getRepos(){
+					const user = await getuser(1);
+					const getRepos = await getRepository(user.username);
+					console.log('repos are :',getRepos);
+				}    
+
+				getRepos();
+				
