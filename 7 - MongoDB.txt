@@ -82,5 +82,42 @@ chapter-9 : comparison operators use in mongo db
 			// nin - not in
 			
 				example: price :{$in: [10,15,20]};
+
+chapter-10	: logical operators
+
+				use .or() and .and() methods
+				for example
+				course
+					.find()
+					.or({author:'mosh'},{isPublished:true}) // when any of conditon true it return course
+					
+					
+chapter-11 :  Regular expression in javascript
+
+				examples
+					.find({author:regular_expression});
+					
+				regular_expression = /pattern/   standard
 				
-		
+				author : /^mosh/		author name should start with mosh  
+				author : /Hamedani$/i	author name should ends with mosh  
+				author : /.*Mosh.*/		.* means anyhing before mosh after mosh	
+										by default all these cases are canse sensitive 
+										'i' stands for insensitive.
+				
+chapter -12 use .count() count the number of documents based on the conditon given in .find() 
+
+chapter -13 when we need to data at particular page then we use .skip() called pagination
+			.skip((pageNumber-1)*pageSize)
+			.limit(pageSize)
+			
+			pageNumber and pagesize is provided in query string.
+			
+chapter -14 we can import data in .json format to mongo db run following command.
+
+			command is :
+			mongoimport  		   		// to import
+			--db mongo-exercises   		// specifying db name useing --db flag
+			--collection courses    	// specifying collection to courses
+			--file exercise-data.json	// json file
+			--json 						//format of data in json file
