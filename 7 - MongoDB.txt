@@ -79,7 +79,7 @@ chapter-9 : comparison operators use in mongo db
 			//lt  - less than 
 			//lte - less than or equals to
 			//in  - 
-			// nin - not in
+			// nin - not in 
 			
 				example: price :{$in: [10,15,20]};
 
@@ -121,3 +121,37 @@ chapter -14 we can import data in .json format to mongo db run following command
 			--collection courses    	// specifying collection to courses
 			--file exercise-data.json	// json file
 			--json 						//format of data in json file
+
+
+chapter 17 for update quey in mongo db ---------------------- query first 
+
+		async function updateCouse(id){
+    const course = await Course.findById(id);
+    if(!course)
+        return;
+
+    course.isPublished = true;
+    course.author = 'another author';
+
+    const result = await course.save();
+    console.log(result);
+}
+
+updateCouse('5c746cec790c090a10158891');
+
+chapter - 18		async function updateCouseUpdateFirst(id){
+ 			   const result = await Course.update({_id:id},{   // second arguement is update object
+        			$set: {
+            			author:'mosh after changed',
+            			isPublished:true
+        			}
+    				})
+     				console.log(result);
+				} 
+
+			there are lots of update object available.
+
+			you get only resolve result in this function
+			
+			what if you want to update the document and get it.
+		use findIdAndUpdate(id,{update object}); 
