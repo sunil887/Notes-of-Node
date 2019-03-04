@@ -62,7 +62,16 @@ chapter - 8  console.log can be used to debug application but not a goodway of d
 		set DEBUG:* to set denug to all namespace available
 
 			
-
+chapter - 12 : In order to use the routes we do 
+			create another file with the route name ''
+		
+		1>then use const router =  express.Router()
+		2>create all the routes ;
+		3)export them   
+		4) then use the routes app.use('<routerPath>',routername())
+		
+ 
 chapter -22  Templating Engine : Sometimes we need to sent HTML markup to the client from api for that we 
+
 		can use "view Engine" like pug ,moustache etc.
 		    	    	

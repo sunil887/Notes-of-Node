@@ -1,0 +1,48 @@
+chapter -1 mongoose validation can be done by changes in schema like 
+		
+	const MongooseSchema = {
+    name : {type :String,required:true}, <-------------validation 
+    author: String,
+    tags:[String],
+    date: {type:Date,default:Date.now},
+    isPublished:Boolean
+}
+
+
+	check validation when you do save and if validation fails then it throws an exception.
+	try{
+        	result =  await course.save();
+        	console.log(result);
+    	}
+    	catch(ex)
+    	{
+        	console.log(ex.message);
+    	}
+
+
+chapter -2,3,4 : custom validator are use where inbuilt validators cannot be use like to validate array
+			
+		use validate property and use a vaidator 
+
+		{
+		isasync:true   //for async validators
+		Validate : 
+			validator: function(v,callback){  // remember  
+			  	//async work	
+				callback(result);		
+			}		
+		}
+
+chapter - 5 you can more option schema type object.
+		{
+			property_name: 	{
+					 type :string
+					 required:true	
+					enum :['sfsdf','sdfsdf','sfsdf']	
+					}	//etc
+		}
+
+			
+		
+		
+		 
