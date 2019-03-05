@@ -1,0 +1,15 @@
+chapter -1  Modeling relationship with the entity
+	    database relationship can be of three types 
+
+	1)reference
+		this is like foriegn key concept ---------------->consistency
+		
+		let course = {author:id}
+		author = {id: ,name: }
+	
+	2)embedded 
+ 		let course = { author : { name: 'sunil'}}  -------------->performance
+	
+	3)hybrid 
+		let course = {author : {id :  ,name:sunil}}				
+		let author = {id: /// other 50 peroperty }
