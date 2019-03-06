@@ -13,3 +13,33 @@ chapter -1  Modeling relationship with the entity
 	3)hybrid 
 		let course = {author : {id :  ,name:sunil}}				
 		let author = {id: /// other 50 peroperty }
+		
+chapter-2 : referencing another document in another document 
+
+			example 
+			const course = mongoose.schema(
+				{
+					name : String
+					
+					author{
+						type: mongoose.Schema.Types.ObjectId,      -------------------this tells this is a ref types.
+						ref:'author' ---- documentname
+					}
+				)
+				
+chapter -3 while fetching data from documents of reference types we use .populate 
+
+				example 
+				 Courses.find()
+						.populate('referenced_document_name','property__names_of_reference_document - Prp_not_wanted_to_show');
+						.select('property__names ');
+						
+chapter -4 embedded documents are simply like another document 
+			1>create schema of them 
+			>create a model for them -- intresting 
+			3>not to embed into 
+					
+					const Course = mongoose.model('course'),new mongoose.schema({
+						name:string
+						author:authorschema ----------notice!!
+					})  
